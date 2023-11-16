@@ -28,10 +28,13 @@ const initQianKun = () => {
   renderWithQiankun({
     bootstrap() {},
     mount(props) {
+      console.log("test-three接受到主应用的参数: ", props)
       const { container } = props
       render(container)
     },
-    unmount(props) {},
+    unmount(props) {
+      app.unmount()
+    },
     update(props) {}
   })
 }
